@@ -15,7 +15,7 @@ return [
     |
     */
 
-    'default' => env('DB_CONNECTION', 'mysql'),
+    'default' => env('DB_CONNECTION', 'mongodb'),
 
     /*
     |--------------------------------------------------------------------------
@@ -41,6 +41,12 @@ return [
             'database' => env('DB_DATABASE', database_path('database.sqlite')),
             'prefix' => '',
             'foreign_key_constraints' => env('DB_FOREIGN_KEYS', true),
+        ],
+        'mongodb' => [
+            'driver' => 'mongodb',
+                'dsn'=>'mongodb://mongoUser:mongoPassword@mongo0-shard-00-00-gtjvt.mongodb.net:27017,mongo0-shard-00-01-gtjvt.mongodb.net:27017,mongo0-shard-00-02-gtjvt.mongodb.net:27017/test?ssl=true&replicaSet=Mongo0-shard-0&authSource=admin&retryWrites=true&w=majority
+                ',
+                'database' => 'empleadosDB',
         ],
 
         'mysql' => [

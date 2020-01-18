@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Response;
+use App\Empleado as Empleado;
 
 
 class EmpleadoController extends Controller
@@ -15,7 +16,8 @@ class EmpleadoController extends Controller
      */
     public function index()
     {
-        return response()->json(['message' => 'Not Found!'], 404);
+       
+        return response()->json(Empleado::all(), 200);
     }
 
     /**
@@ -36,7 +38,7 @@ class EmpleadoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        dd($request->toArray());
     }
 
     /**
